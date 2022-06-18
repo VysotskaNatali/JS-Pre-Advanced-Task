@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Task 6 </title>
+        <link rel="stylesheet" href="./style/style.css">
+    </head>
+    <body>
+        <form class="singIn hidden" name="form1">
+            <h1 class="singIn__head">Please sing in</h1>
+            <div class="input">
+                <span class="singIn__placeholder hidden">Email address</span>
+                <input type="text" class="singIn__email " name=""
+                    placeholder="Email address">
+            </div>
+            <div class="input">
+                <span class="singIn__placeholder hidden">Password</span>
+                <input type="password" class="singIn__password" name=""
+                    placeholder="Password">
+                <p class="singIn__alert hidden"> lockalstorege is empty</p>
+            </div>
+            <input type="button" class="singIn__btn" value="Sing in">
+            <p class="singIn__singUp">Sing up now</p>
+        </form> <!-- end singIn -->
+
+        <form class="singUp" name="form2">
+            <h1 class="singUp__head">Please sing up</h1>
+            <div class="input">
+                <div class="singUp__Check hidden"></div>
+                <span class="singUp__placeholder hidden">First name</span>
+                <input type="text" class="singUp__first" name=""
+                    placeholder="First name">
+
+            </div>
+            <div class="input">
+                <div class="singUp__Check hidden"></div>
+                <span class="singUp__placeholder hidden">Last name</span>
+                <input type="text" class="singUp__last" name=""
+                    placeholder="Last name">
+
+            </div>
+            <div class="input">
+                
+                <div class="singUp__Check  email hidden"></div>
+                <span class="singUp__placeholder hidden">Email address</span>
+                <input type="text" class="singUp__email" name=""
+                    placeholder="Email address">
+                    <div class="singUp__Error  hidden"></div>
+                    <p class="singUp__alert hidden">This email already exist </p> 
+                
+            </div>
+            <div class="input">
+                <div class="singUp__Check hidden"></div>
+                <span class="singUp__placeholder hidden">Password</span>
+                <input type="password" class="singUp__password" name=""
+                    placeholder="Password">
+
+            </div>
+            <input type="button" class="singUp__btn" value="Sing up">
+            <p class="singUp__singIn">Sing in now</p>
+        </form>
+        <div class="profil hidden">
+            <div class="profil__img"></div>
+            <div class="profil__name"></div>
+            <div class="profil__email"></div>
+            <div class="profil__prof">Designer & Web Developing</div>
+            <div class="profil__block"></div>
+            <input type="button" class="profil__btn" value="Sing up">
+        </div>
+        
+        <script src="main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,159 @@
+@import "base/varible";
+@import "base/mixins";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: $text-color;
+  background-color: rgb(235, 237, 240);
+}
+%border {
+  border-radius: 5px;
+  border: 1px solid $input-color;
+  outline: none;
+}
+.singIn {
+  @include box(400px, 300px);
+  margin: 50px auto;
+
+  &__head {
+    text-align: center;
+  }
+  &__placeholder {
+    color: $input-color;
+    font-size: 13px;
+    position: absolute;
+    top: 20px;
+    left: 17px;
+  }
+  &__email {
+    @include box(100%, 50px);
+    @extend %border;
+    margin: 15px 0;
+    padding:  0px 15px;
+    font-size: 18px;
+    color: $text-color;
+  }
+  &__password {
+    @extend .singIn__email;
+  }
+  &__alert {
+    position: absolute;
+    padding: 1px 5px;
+    background-color: $error-background;
+    color: $btn-color;
+    text-align: center;
+    font-size: 15px;
+    line-height: 28px;
+    border-radius: 5px;
+    top: 66px;
+    left: 2px;
+  }
+  &__btn {
+    @include box(100%, 45px);
+    @extend %border;
+    color: $btn-color;
+    background-color: $btn-background;
+    margin: 15px 0;
+  }
+  &__singUp {
+    font-size: 15px;
+    color: $btn-background-1;
+  }
+}
+.input {
+  position: relative;
+}
+.singUp {
+  @extend .singIn;
+
+  &__head {
+    @extend .singIn__head;
+  }
+  &__placeholder {
+    @extend .singIn__placeholder;
+  }
+  &__first,
+  &__last,
+  &__email,
+  &__password {
+    @extend .singIn__email;
+  }
+  &__alert {
+    @extend .singIn__alert;
+  }
+  &__Check {
+    @include box(30px, 30px);
+    
+    position: absolute;
+    top: 25px;
+    right: 10px;
+    background-image: url(./image/check.svg);
+  }
+  &__Error {
+    @extend .singUp__Check;
+    background-image: url(./image/times.svg);
+  }
+  &__btn {
+    @extend .singIn__btn;
+    background-color: $btn-background-1;
+  }
+  &__singIn {
+    @extend .singIn__singUp;
+  }
+
+}
+.profil {
+  @extend .singUp;
+  text-align: center;
+  background-color: $btn-color;
+  padding-top: 25px;
+  &__img {
+    @include box(118px, 118px);
+    margin: 0 auto;
+    border-radius: 50%;
+    background-image: url(./image/men.png);
+    background: cover;
+  }
+  &__name {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 10px;
+  }
+  &__email {
+    font-size: 22px;
+    font-weight: 300;
+    color: $input-color;
+    margin: 10px;
+  }
+  &__prof {
+    @extend .profil__email;
+  }
+  &__block {
+    @include box(90px, 70px);
+    border-top: 1px solid $input-color;
+    margin: 25px auto;
+  }
+  &__btn {
+    @extend .singIn__btn;
+  }
+}
+.error {
+  box-shadow: 1px 1px 7px 0 $error-background;
+  border: 1px solid $error-background;
+}
+.focus {
+  box-shadow: 1px 1px 7px 0 $btn-background-1;
+  border: 1px solid $btn-background-1;
+}
+.check {
+  box-shadow: 1px 1px 7px 0 $btn-background;
+  border: 1px solid $btn-background;
+}
+.hidden{
+    display: none;
+}
