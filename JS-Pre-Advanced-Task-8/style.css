@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(210, 241, 231);
+}
+.task{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(22, 21, 21);
+}
+a{
+    color: aliceblue;
+    text-decoration: none;
+    height: 50px;
+    line-height: 50px;
+}
+.menu-active{
+    color: rgb(12, 201, 43);
+}
+a:hover{
+    color: rgb(12, 201, 43); 
+}
+
+.cenzor-task{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(235, 230, 230);
+}
+.cenzor-top{
+    width: 100%;
+    height: 80px;
+    background-color: rgb(216, 213, 213);
+    border-bottom: 1px solid rgb(189, 186, 186);
+    text-align: center;
+    line-height: 80px;
+    font-size: 30px;
+}
+.cenzor-container{
+    width: 800px;
+    min-height: 200px;
+    margin: 100px auto;
+    background-color: rgb(216, 213, 213);
+    border-radius: 5px;
+    padding: 15px;
+}
+.cenzor-bad, .cenzor-words{
+font-weight: bolder;
+font-size: 20px;
+}
+.cenzor-words{
+    color: rgb(233, 34, 34);
+}
+.cenzor-input, .cenzor-text{
+margin: 10px 0;
+width: 600px;
+height: 40px;
+border-radius: 5px;
+border: 1px solid rgb(189, 186, 186);
+padding: 10px;
+font-size: 18px;
+
+}
+.btn-add, .btn-reset{
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+}
+.btn-add{
+    background-color: rgb(240, 161, 15);
+    border: 1px solid rgb(240, 161, 15);
+}
+
+.btn-reset{
+    background-color: rgb(226, 26, 26);
+    border: 1px solid rgb(226, 26, 26);
+    color: rgb(255, 255, 255);
+}
+.cenzor-text{
+    width: 100%;
+    height: 130px;
+}
+.btn-cenzor{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    background-color: rgb(21, 104, 21);
+    border: 1px solid rgb(3, 99, 3);
+    color: rgb(252, 252, 252);
+}
+.focus{
+    border: 1px solid rgb(47, 105, 172); 
+    box-shadow: 0 0 5px 0 rgb(47, 105, 172); 
+    outline: none;
+}
+.error{
+    border: 1px solid rgb(211, 47, 47); 
+    box-shadow: 0 0 5px 0 rgb(211, 47, 47); 
+    outline: none;
+}
