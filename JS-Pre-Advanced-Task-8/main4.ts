@@ -15,8 +15,7 @@ function getSqrt(number:number):void{
     }
     else{
       console.log(`Квадратний корінь з ${number}  дорівнює  ${Math.sqrt(number)}`);
-    }
-     
+    } 
   }
   let nuM: any = prompt('Write number here');
   getSqrt(Number(nuM));

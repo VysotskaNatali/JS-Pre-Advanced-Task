@@ -14,26 +14,30 @@ const textarea = document.querySelector(".cenzor-text") as HTMLTextAreaElement;
 const badWord = document.querySelector(".cenzor-words") as HTMLElement;
 const cenzor = document.querySelector(".btn-cenzor") as HTMLInputElement;
 
-input.addEventListener("focus", (): void => {
-  input.classList.add("focus");
-  input.classList.remove("error");
+/* Form Style */ 
+input.addEventListener("focus", function (): void {
   input.placeholder = "word here..!";
+  addFocus(event);
 });
-input.addEventListener("blur", (): void => {
-  input.classList.remove("focus");
-});
+input.addEventListener("blur", function (event): void { removeFocus(event);});
 
-textarea.addEventListener("focus", (): void => {
-  textarea.classList.add("focus");
-  textarea.classList.remove("error");
+textarea.addEventListener("focus", function (event): void {
   textarea.placeholder = "text here..";
-
+  addFocus(event);
 });
-textarea.addEventListener("blur", (): void => {
-  textarea.classList.remove("focus");
-});
+textarea.addEventListener("blur", function (event): void {removeFocus(event);});
 
-add.addEventListener("click", (): void => {
+function addFocus(event): void {
+  event.target.classList.add("focus");
+  event.target.classList.remove("error");
+}
+
+function removeFocus(event): void {
+  event.target.classList.remove("focus");
+}
+
+/* Add BED words */
+add.addEventListener("click", function (): void {
   if (!input.value) {
     input.placeholder = "Please write a word!";
     input.classList.remove("focus");
@@ -48,17 +52,17 @@ add.addEventListener("click", (): void => {
   }
 });
 
+/* Reset words */
 reset.addEventListener("click", (): void => {
   badWord.textContent = "";
   textarea.value = "";
 });
 
-cenzor.addEventListener("click", (): void => {
+/* Prohibited words */
+cenzor.addEventListener("click", function (): void {
   let list: any = badWord.textContent?.split(", ");
   let text: string = textarea.value;
-  console.log(textarea.value);
-  
-  if (text) {
+   if (text) {
     for (let i: number = 0; i < list?.length; i++) {
       let bad: string = list[i];
       while (text.includes(bad)) {
@@ -66,16 +70,15 @@ cenzor.addEventListener("click", (): void => {
         for (let j: number = 0; j < bad?.length; j++) {
           word += "*";
         }
-        textarea.value = text.replace(bad, word);
+        text = text.replace(bad, word);
       }
+      textarea.value = text;
     }
-  }
-  else{
+  } else {
     textarea.classList.remove("focus");
     textarea.classList.add("error");
     textarea.placeholder = "Please write a text!";
-
-    
   }
-  console.log(textarea.value);
 });
+
+

@@ -12,7 +12,6 @@ function max(...arg: Array<number>): number{
  for (let i = 0; i < arg.length; i++){
     maxNum = (maxNum < arg[i])? arg[i]:maxNum
  }
- // console.log(maxNum);
   return maxNum
 }
 console.log(max(5,-2, 30, 6));

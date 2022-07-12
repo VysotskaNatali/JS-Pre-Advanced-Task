@@ -5,23 +5,24 @@ const reset = document.querySelector(".btn-reset");
 const textarea = document.querySelector(".cenzor-text");
 const badWord = document.querySelector(".cenzor-words");
 const cenzor = document.querySelector(".btn-cenzor");
-input.addEventListener("focus", () => {
-    input.classList.add("focus");
-    input.classList.remove("error");
+input.addEventListener("focus", function () {
     input.placeholder = "word here..!";
+    addFocus(event);
 });
-input.addEventListener("blur", () => {
-    input.classList.remove("focus");
-});
-textarea.addEventListener("focus", () => {
-    textarea.classList.add("focus");
-    textarea.classList.remove("error");
+input.addEventListener("blur", function (event) { removeFocus(event); });
+textarea.addEventListener("focus", function (event) {
     textarea.placeholder = "text here..";
+    addFocus(event);
 });
-textarea.addEventListener("blur", () => {
-    textarea.classList.remove("focus");
-});
-add.addEventListener("click", () => {
+textarea.addEventListener("blur", function (event) { removeFocus(event); });
+function addFocus(event) {
+    event.target.classList.add("focus");
+    event.target.classList.remove("error");
+}
+function removeFocus(event) {
+    event.target.classList.remove("focus");
+}
+add.addEventListener("click", function () {
     if (!input.value) {
         input.placeholder = "Please write a word!";
         input.classList.remove("focus");
@@ -41,10 +42,9 @@ reset.addEventListener("click", () => {
     badWord.textContent = "";
     textarea.value = "";
 });
-cenzor.addEventListener("click", () => {
+cenzor.addEventListener("click", function () {
     let list = badWord.textContent?.split(", ");
     let text = textarea.value;
-    console.log(textarea.value);
     if (text) {
         for (let i = 0; i < list?.length; i++) {
             let bad = list[i];
@@ -53,8 +53,9 @@ cenzor.addEventListener("click", () => {
                 for (let j = 0; j < bad?.length; j++) {
                     word += "*";
                 }
-                textarea.value = text.replace(bad, word);
+                text = text.replace(bad, word);
             }
+            textarea.value = text;
         }
     }
     else {
@@ -62,5 +63,4 @@ cenzor.addEventListener("click", () => {
         textarea.classList.add("error");
         textarea.placeholder = "Please write a text!";
     }
-    console.log(textarea.value);
 });
