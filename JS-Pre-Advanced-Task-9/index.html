@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 9</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <div class="container">
+      <form class="user-add" name="user">
+        <p>Login</p>
+        <input type="text" class="user-login" placeholder="Enter login">
+        <p>Password</p>
+        <input type="password" class="user-password" placeholder="Enter password">
+        <p>Email address</p>
+        <input type="text" class="user-email" placeholder="Enter email">
+        <input type="button" class="user-btn" value="Add user"  >
+        <input type="button" class="user-edit-btn " value="Edit user" hidden>
+      </form> <!--user-add -->
+      <div class="user-table">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Login</th>
+              <th>Password</th>
+              <th>Email</th>
+              <th>Edit</th>
+              <th>Delite</th>
+            </tr>
+          </thead>
+          <tbody class="user-list"></tbody>
+        </table>
+      </div>  <!-- user-table -->
+    </div> <!-- container -->
+
+
+
+    <script src="main.js"></script>
+  </body>
+</html>
